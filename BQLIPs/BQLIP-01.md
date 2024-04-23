@@ -22,7 +22,7 @@ Hence, we aim to use YAML's original structure as much as possible to describe t
 
 During the implementation of grammar expression, replace the current expression with the semantic expression of the YAML structure. In the v0.0.1 syntax, provide corresponding methods for rewriting the expression:
 
-```jsx
+```yaml
 // condition if $a is little than 10, then it's true
 condition: $a < 10
 
@@ -37,7 +37,7 @@ The aforementioned approach necessitates the implementation of additional parsin
 
 We will transform the aforementioned invocation method into a YAML-structured expression. Any definition that starts with an underscore indicates a system's built-in function.
 
-```jsx
+```yaml
 // call _lt func
 condition:
 	_lt: 
@@ -66,7 +66,7 @@ The underscore function corresponds to a standard library function. Its sub-elem
 
 Some basic library functions:
 
-```jsx
+```yaml
 _gt: >
 _lt: <
 _gte: >=
