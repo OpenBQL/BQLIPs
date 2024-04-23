@@ -49,7 +49,6 @@ amount:
   _mul:
     - $swap_amount
     - 1e18
-			
 
 // get token account for solana address
 // _getAccount($mint_addr, $ADDRESS, $token_program_id)
