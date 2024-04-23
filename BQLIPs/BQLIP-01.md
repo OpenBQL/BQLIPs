@@ -40,26 +40,25 @@ We will transform the aforementioned invocation method into a YAML-structured ex
 ```yaml
 // call _lt func
 condition:
-	_lt: 
-		- $a
-		- 10
+  _lt: 
+    - $a
+    - 10
 
 // call _mul func
 amount:
-	_mul:
-		- $swap_amount
-		- 1e18
+  _mul:
+    - $swap_amount
+    - 1e18
 			
 
 // get token account for solana address
 // _getAccount($mint_addr, $ADDRESS, $token_program_id)
 accounts:
-	userTokenAccount:
-		_getAccount:
-			- $mint_addr  // ctx.mint_addr
-			- $ADDRESS  // user address
-			- $token_program_id // contract address
-				
+  userTokenAccount:
+    _getAccount:
+      - $mint_addr  // ctx.mint_addr
+      - $ADDRESS  // user address
+      - $token_program_id // contract address
 ```
 
 The underscore function corresponds to a standard library function. Its sub-elements represent the parameters of the function call. During execution, the interpreter and executor identify the function and read the parameters to perform the operation. This process simplifies their work. When the parser encounters the underscore function, it directly returns the operation result to the upper-level variable as the function's outcome.
